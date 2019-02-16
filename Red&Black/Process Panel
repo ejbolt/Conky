@@ -38,7 +38,7 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
 minimum_size 300 100
 stippled_borders 0
-update_interval 2.0
+update_interval 1.0
 uppercase no
 use_spacer none
 
@@ -54,8 +54,7 @@ color2 red
 color3 red
 
 TEXT
-${color2}CPU ${color0}${alignr}${cpu cpu0}%
-${cpubar cpu0 5,}
+${color2}Processes (CPU)
 ${top name 1} $alignr ${top cpu 1}%
 ${top name 2} $alignr ${top cpu 2}%
 ${top name 3} $alignr ${top cpu 3}%
@@ -64,8 +63,9 @@ ${top name 5} $alignr ${top cpu 5}%
 
 ${color2}RAM ${color0}${alignr}${mem}/${memmax}
 ${membar 5,}
-    Used    ${alignr}${memperc}%
-    Free    ${alignr}${memfree} 
+${offset 15}Used    ${alignr}${memperc}%
+${offset 15}Free    ${alignr}${memfree}
+${color2}Processes (MEM)
 ${top_mem name 1} ${alignr} ${top_mem mem_res 1}
 ${top_mem name 2} ${alignr} ${top_mem mem_res 2}
 ${top_mem name 3} ${alignr} ${top_mem mem_res 3}
@@ -74,5 +74,5 @@ ${top_mem name 5} ${alignr} ${top_mem mem_res 5}
 
 ${color2}SWAP ${color0}${alignr}${swap}/${swapmax}
 ${swapbar 5,}
-    Used    ${alignr}${swapperc}%
-    Free    ${alignr}${swapfree}  
+${offset 15}Used    ${alignr}${swapperc}%
+${offset 15}Free    ${alignr}${swapfree}  

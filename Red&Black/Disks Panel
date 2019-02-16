@@ -21,7 +21,7 @@ draw_outline no
 draw_shades no
 
 gap_x 5
-gap_y 526
+gap_y 608
 net_avg_samples 2
 no_buffers yes
 out_to_console no
@@ -36,7 +36,7 @@ own_window_argb_visual no
 own_window_argb_value 0
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
-minimum_size 300 40
+minimum_size 300 50
 stippled_borders 0
 update_interval 1.0
 uppercase no
@@ -54,7 +54,6 @@ color2 red
 color3 red
 
 TEXT
-${color2}Download ${color0}${alignr}${downspeedf enp0s31f6} KiB/s
-${color2}Upload ${color0}${alignr}${upspeedf enp0s31f6} KiB/s
-${color2}Local${color0}${alignr}${execi 3600 ip -p -f inet a | grep enp0s31f6 | cut -d ' ' -f 6 | grep -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d '/' -f 1}
-${color2}Public${color0}${alignr}${execi 3600 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
+${color2}Disk Use
+${offset 15}${color1}Free: ${fs_free /}${alignr}Used: ${fs_used /}
+${offset 15}${color1}Free: ${fs_free /home}${alignr}Used: ${fs_used /home}
