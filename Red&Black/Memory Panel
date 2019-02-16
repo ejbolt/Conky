@@ -1,5 +1,5 @@
 # **********************************************************************
-# "CPU Panel (8-core)" theme for Conky by Tony George (teejee2008@gmail.com)
+# "Memory Panel" theme for Conky by Tony George (teejee2008@gmail.com)
 #
 # Webpage: http://teejeetech.blogspot.in/
 # **********************************************************************
@@ -8,7 +8,7 @@
 background yes
 double_buffer yes
 
-alignment bottom_right
+alignment middle_right
 
 border_width 1
 cpu_avg_samples 2
@@ -21,7 +21,7 @@ draw_outline no
 draw_shades no
 
 gap_x 5
-gap_y 500
+gap_y 87
 net_avg_samples 2
 no_buffers yes
 out_to_console no
@@ -36,7 +36,7 @@ own_window_argb_visual no
 own_window_argb_value 0
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
-minimum_size 300 40
+minimum_size 300 100
 stippled_borders 0
 update_interval 1.0
 uppercase no
@@ -54,8 +54,19 @@ color2 red
 color3 red
 
 TEXT
-${color2}${alignc}NETWORK
-${color2}Download ${color0}${alignr}${downspeedf enp0s31f6} KiB/s
-${color2}Upload ${color0}${alignr}${upspeedf enp0s31f6} KiB/s
-${color2}Local${color0}${alignr}${execi 3600 ip -p -f inet a | grep enp0s31f6 | cut -d ' ' -f 6 | grep -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d '/' -f 1}
-${color2}Public${color0}${alignr}${execi 3600 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
+${color2}${alignc}MEMORY
+${color2}RAM ${color0}${alignr}${mem}/${memmax}
+${membar 5,}
+${offset 15}Used    ${alignr}${memperc}%
+${offset 15}Free    ${alignr}${memfree}
+${color2}${alignc}Processes
+${top_mem name 1} ${alignr} ${top_mem mem_res 1}
+${top_mem name 2} ${alignr} ${top_mem mem_res 2}
+${top_mem name 3} ${alignr} ${top_mem mem_res 3}
+${top_mem name 4} ${alignr} ${top_mem mem_res 4}
+${top_mem name 5} ${alignr} ${top_mem mem_res 5}
+
+${color2}SWAP ${color0}${alignr}${swap}/${swapmax}
+${swapbar 5,}
+${offset 15}Used    ${alignr}${swapperc}%
+${offset 15}Free    ${alignr}${swapfree}  

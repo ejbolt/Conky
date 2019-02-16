@@ -21,7 +21,7 @@ draw_outline no
 draw_shades no
 
 gap_x 5
-gap_y 608
+gap_y 600
 net_avg_samples 2
 no_buffers yes
 out_to_console no
@@ -54,6 +54,6 @@ color2 red
 color3 red
 
 TEXT
-${color2}Disk Use
+${color2}${alignc}DISK USE
 ${offset 15}${color1}Free: ${fs_free /}${alignr}Used: ${fs_used /}
 ${offset 15}${color1}Free: ${fs_free /home}${alignr}Used: ${fs_used /home}

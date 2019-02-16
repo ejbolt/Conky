@@ -12,7 +12,7 @@ alignment top_right
 
 border_width 1
 cpu_avg_samples 2
-default_color white
+default_color red
 default_outline_color white
 default_shade_color white
 draw_borders no
@@ -46,8 +46,8 @@ use_xft yes
 xftalpha 0.1
 xftfont Droid Sans:size=12
 color0 red
-color1 EAEAEA
-color2 FFA300
+color1 red
+color2 red
 color3 red
 
 TEXT
@@ -66,3 +66,9 @@ ${font Droid Sans:size=10}${color3}Core 5  ${color3}${freq_g (5)}GHz  ${color0} 
 ${color3}${cpubar cpu5 5,} 
 ${font Droid Sans:size=10}${color3}Core 6  ${color3}${freq_g (6)}GHz  ${color0} ${cpu cpu6}%
 ${color3}${cpubar cpu6 5,} 
+${color2}${alignc}Processes
+${top name 1} $alignr ${top cpu 1}%
+${top name 2} $alignr ${top cpu 2}%
+${top name 3} $alignr ${top cpu 3}%
+${top name 4} $alignr ${top cpu 4}%
+${top name 5} $alignr ${top cpu 5}%
